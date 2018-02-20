@@ -9,14 +9,14 @@ export interface DrawerProps {
 const Drawer = (props: DrawerProps) => {
 
     let items: ItemMenu[] = [{
-        icon: 'dashboard',
+        icon: 'library_books',
         text: 'Home',
         to: '/'
     },
     {
         icon: 'collections_bookmark',
-        text: 'Meus Livros',
-        to: '/my-books'
+        text: 'Meus Empréstimos',
+        to: '/my-loans'
     }
     ];
 
@@ -24,9 +24,7 @@ const Drawer = (props: DrawerProps) => {
         <div className="mdl-layout__drawer">
             <span className="mdl-layout-title">Biblioteca ESX</span>
             <nav className="mdl-navigation">
-                <ul>
-                    {items.map((item, index) => <NavItem key={index} {...item} />)}
-                </ul>
+                {items.map((item, index) => <NavItem key={index} {...item} />)}
             </nav>
         </div>);
 }

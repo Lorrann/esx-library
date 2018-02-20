@@ -12,6 +12,7 @@ interface RatingState {
 }
 
 class Rating extends React.Component<RatingProps, RatingState> {
+
     constructor(props: RatingProps) {
         super(props);
 
@@ -46,11 +47,12 @@ class Rating extends React.Component<RatingProps, RatingState> {
     }
 
     render() {
-        return <fieldset className="rating mb-3">
 
+        const componentName: string  = Math.random().toString(36).substring(7);
+        return <fieldset className="rating">
             {
                 this.allowedRatings.map((rating, index) =>
-                    <RatingStar key={index} checked={rating.value === this.state.value} id={`star_${rating.value}`} readOnly={true} type={rating.type} value={rating.value} onChange={this.vote} />
+                    <RatingStar key={index} checked={rating.value === this.state.value} id={`star_${componentName}_${rating.value}`} readOnly={true} type={rating.type} value={rating.value} onChange={this.vote} />
                 )
             }
 

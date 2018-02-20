@@ -8,12 +8,7 @@ export interface NavItemProps {
 }
 
 const NavItem = (props: NavItemProps) => (
-    <li className="mdl-list__item">
-        <NavLink to={props.to}>
-            <span className="mdl-list__item-primary-content">
-                {props.text} <i className="material-icons mdl-list__item-icon">{props.icon}</i>
-            </span>
-        </NavLink>
-    </li>);
+        <NavLink to={props.to} className="mdl-navigation__link"><i className="material-icons mdl-list__item-icon">{props.icon}</i> &nbsp; {props.text}</NavLink>
+);
 
 export default NavItem;
